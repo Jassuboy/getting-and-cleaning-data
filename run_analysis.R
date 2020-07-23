@@ -40,3 +40,4 @@ meanstd <- cbind(final[,grep(".+mean.+", colnames(final))],
 
 #5> tidy data set with average of each var for each activity and each subject
 tidy <- meanstd %>% group_by(subject_id, ativity) %>% summarise_all(mean)
+write.table(tidydata, "TidyData.txt", row.name=FALSE)
